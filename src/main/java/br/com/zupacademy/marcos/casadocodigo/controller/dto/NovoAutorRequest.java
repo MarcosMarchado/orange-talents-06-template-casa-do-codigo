@@ -1,5 +1,6 @@
 package br.com.zupacademy.marcos.casadocodigo.controller.dto;
 
+import br.com.zupacademy.marcos.casadocodigo.controller.validacao.EmailJaExiste;
 import br.com.zupacademy.marcos.casadocodigo.model.Autor;
 
 import javax.validation.constraints.Email;
@@ -16,6 +17,7 @@ public class NovoAutorRequest {
     @Email
     @NotNull
     @NotBlank
+    @EmailJaExiste
     private String email;
 
     @NotNull
