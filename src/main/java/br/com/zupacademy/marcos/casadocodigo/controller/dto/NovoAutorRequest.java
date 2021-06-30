@@ -25,10 +25,16 @@ public class NovoAutorRequest {
     @Size(max = 400)
     private String descricao;
 
-    public NovoAutorRequest(String nome, String email, String descricao) {
-        this.nome = nome;
-        this.email = email;
-        this.descricao = descricao;
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
     public Autor converter(){
