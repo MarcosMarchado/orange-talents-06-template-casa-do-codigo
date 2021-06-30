@@ -1,6 +1,5 @@
 package br.com.zupacademy.marcos.casadocodigo.controller.validacao;
 
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Retention;
@@ -11,14 +10,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({FIELD})
 @Retention(RUNTIME)
-@Constraint(validatedBy = EmailJaExisteValidator.class)
-public @interface EmailJaExiste {
-
-    String message() default "Email já existe";
-
+@Constraint(validatedBy = UnicoValidator.class)
+public @interface Unico {
+    String message() default "O campo já existe";
+    String fieldName();
+    Class<?> clazz();
     Class<?>[] groups() default {};
-
     Class<? extends Payload>[] payload() default {};
-
-    String value() default "";
 }
