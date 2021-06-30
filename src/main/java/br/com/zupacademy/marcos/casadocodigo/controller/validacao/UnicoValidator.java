@@ -1,17 +1,11 @@
 package br.com.zupacademy.marcos.casadocodigo.controller.validacao;
 
-import br.com.zupacademy.marcos.casadocodigo.model.Autor;
-import br.com.zupacademy.marcos.casadocodigo.model.Categoria;
-import br.com.zupacademy.marcos.casadocodigo.repository.AutorRepository;
-import br.com.zupacademy.marcos.casadocodigo.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.List;
 
 public class UnicoValidator implements ConstraintValidator<Unico, String> {
 
