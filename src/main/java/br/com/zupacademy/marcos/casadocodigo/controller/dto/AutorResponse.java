@@ -2,7 +2,7 @@ package br.com.zupacademy.marcos.casadocodigo.controller.dto;
 
 import br.com.zupacademy.marcos.casadocodigo.model.Autor;
 
-public class NovoAutorResponse {
+public class AutorResponse {
 
     private String nome;
 
@@ -16,7 +16,7 @@ public class NovoAutorResponse {
         return descricao;
     }
 
-    public NovoAutorResponse(Autor autor) {
+    public AutorResponse(Autor autor) {
         this.nome = autor.getNome();
         this.descricao = autor.getDescricao();
     }

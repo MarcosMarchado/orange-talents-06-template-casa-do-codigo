@@ -33,10 +33,10 @@ public class ExceptionHandlerController {
         return erros;
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ObjectNotFoundException.class)
     public ErroRegistroNaoEncontrado ObjectNotFoundException(ObjectNotFoundException exception){
-        return new ErroRegistroNaoEncontrado(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+        return new ErroRegistroNaoEncontrado(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 
 }

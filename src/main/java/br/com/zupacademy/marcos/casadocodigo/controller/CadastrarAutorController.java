@@ -1,7 +1,7 @@
 package br.com.zupacademy.marcos.casadocodigo.controller;
 
 import br.com.zupacademy.marcos.casadocodigo.controller.dto.NovoAutorRequest;
-import br.com.zupacademy.marcos.casadocodigo.controller.dto.NovoAutorResponse;
+import br.com.zupacademy.marcos.casadocodigo.controller.dto.AutorResponse;
 import br.com.zupacademy.marcos.casadocodigo.model.Autor;
 import br.com.zupacademy.marcos.casadocodigo.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,12 @@ public class CadastrarAutorController {
 
     @Transactional
     @PostMapping("/autores")
-    public ResponseEntity<NovoAutorResponse> cadastrarAutor(
+    public ResponseEntity<AutorResponse> cadastrarAutor(
             @RequestBody @Valid NovoAutorRequest autorRequest){
 
         Autor autor = autorRequest.converter();
         autorRepository.save(autor);
-        return ResponseEntity.ok(new NovoAutorResponse(autor));
+        return ResponseEntity.ok(new AutorResponse(autor));
     }
 
 }
